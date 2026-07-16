@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<html lang="es"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Urumotos Solution – Taller de Mecánica de Motos</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
@@ -442,43 +440,67 @@ footer{
   .gallery-grid{grid-template-columns:1fr;}
   .hero-stats{flex-direction:column;gap:16px;}
 }
+
+/* IMAGENES */
+img{display:block;max-width:100%;height:auto;}
+.gal-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.4s;}
+.gal-item:hover img{transform:scale(1.08);}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;}
+.about-img-box img{width:100%;height:100%;object-fit:cover;}
+.team-photo img{width:100%;height:100%;object-fit:cover;}
+.blog-thumb img{width:100%;height:100%;object-fit:cover;}
+.svc-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:16px;}
+
+/* VIDEO */
+.video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:1px solid var(--border);background:var(--surface2);}
+.video-wrapper iframe,.video-wrapper video{position:absolute;inset:0;width:100%;height:100%;border:none;}
+.video-section{background:var(--surface);min-height:auto;padding:100px 32px 80px;}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:50px;}
+@media(max-width:900px){.video-grid{grid-template-columns:1fr;}}
+
+/* FOTOGRABADO (hover efecto duotone) */
+.gal-item{overflow:hidden;}
+.gal-item::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,101,0,0.3),rgba(0,0,0,0.5));opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:1;}
+.gal-item:hover::after{opacity:1;}
+.gal-overlay{z-index:2;}
 </style>
 </head>
-<body>
+<body class="edit-mode">
 
 <!-- NAVEGACIÓN -->
-<nav id="main-nav">
+<nav id="main-nav" style="border-bottom-color: rgba(255, 101, 0, 0.2);">
   <div class="nav-inner">
     <a href="#inicio" class="nav-logo">
       <svg viewBox="0 0 32 32" fill="none">
-        <circle cx="16" cy="16" r="15" stroke="#FF6500" stroke-width="1.5"/>
-        <circle cx="16" cy="16" r="6" fill="#FF6500" opacity=".8"/>
-        <line x1="16" y1="1" x2="16" y2="7" stroke="#FF6500" stroke-width="1.5"/>
-        <line x1="16" y1="25" x2="16" y2="31" stroke="#FF6500" stroke-width="1.5"/>
-        <line x1="1" y1="16" x2="7" y2="16" stroke="#FF6500" stroke-width="1.5"/>
-        <line x1="25" y1="16" x2="31" y2="16" stroke="#FF6500" stroke-width="1.5"/>
-        <line x1="4.4" y1="4.4" x2="8.4" y2="8.4" stroke="#FF6500" stroke-width="1.5"/>
-        <line x1="23.6" y1="23.6" x2="27.6" y2="27.6" stroke="#FF6500" stroke-width="1.5"/>
-        <line x1="27.6" y1="4.4" x2="23.6" y2="8.4" stroke="#FF6500" stroke-width="1.5"/>
-        <line x1="8.4" y1="23.6" x2="4.4" y2="27.6" stroke="#FF6500" stroke-width="1.5"/>
+        <circle cx="16" cy="16" r="15" stroke="#FF6500" stroke-width="1.5"></circle>
+        <circle cx="16" cy="16" r="6" fill="#FF6500" opacity=".8"></circle>
+        <line x1="16" y1="1" x2="16" y2="7" stroke="#FF6500" stroke-width="1.5"></line>
+        <line x1="16" y1="25" x2="16" y2="31" stroke="#FF6500" stroke-width="1.5"></line>
+        <line x1="1" y1="16" x2="7" y2="16" stroke="#FF6500" stroke-width="1.5"></line>
+        <line x1="25" y1="16" x2="31" y2="16" stroke="#FF6500" stroke-width="1.5"></line>
+        <line x1="4.4" y1="4.4" x2="8.4" y2="8.4" stroke="#FF6500" stroke-width="1.5"></line>
+        <line x1="23.6" y1="23.6" x2="27.6" y2="27.6" stroke="#FF6500" stroke-width="1.5"></line>
+        <line x1="27.6" y1="4.4" x2="23.6" y2="8.4" stroke="#FF6500" stroke-width="1.5"></line>
+        <line x1="8.4" y1="23.6" x2="4.4" y2="27.6" stroke="#FF6500" stroke-width="1.5"></line>
       </svg>
       URUMOTOS <span class="dot">·</span> SOLUTION
     </a>
     <ul class="nav-links">
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#equipo">Equipo</a></li>
-      <li><a href="#galeria">Galería</a></li>
-      <li><a href="#precios">Precios</a></li>
-      <li><a href="#testimonios">Clientes</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-      <li><a href="#ubicacion">Ubicación</a></li>
+      <li><a href="#inicio" class="active">Inicio</a></li>
+      <li><a href="#nosotros" class="">Nosotros</a></li>
+      <li><a href="#servicios" class="">Servicios</a></li>
+      <li><a href="#equipo" class="">Equipo</a></li>
+      <li><a href="#galeria" class="">Galería</a></li>
+      <li><a href="#video" class="">Video</a></li>
+      <li><a href="#precios" class="">Precios</a></li>
+      <li><a href="#testimonios" class="">Clientes</a></li>
+      <li><a href="#blog" class="">Blog</a></li>
+      <li><a href="#contacto" class="">Contacto</a></li>
+      <li><a href="#ubicacion" class="">Ubicación</a></li>
     </ul>
     <button class="hamburger" id="hamburger-btn" aria-label="Menú">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        <line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line>
       </svg>
     </button>
   </div>
@@ -491,6 +513,7 @@ footer{
   <a href="#servicios" onclick="closeMobile()">🔧 Servicios</a>
   <a href="#equipo" onclick="closeMobile()">👨‍🔧 Equipo</a>
   <a href="#galeria" onclick="closeMobile()">📸 Galería</a>
+  <a href="#video" onclick="closeMobile()">🎬 Video</a>
   <a href="#precios" onclick="closeMobile()">💰 Precios</a>
   <a href="#testimonios" onclick="closeMobile()">⭐ Clientes</a>
   <a href="#blog" onclick="closeMobile()">📰 Blog</a>
@@ -501,29 +524,33 @@ footer{
 <!-- ===================== 1. INICIO ===================== -->
 <section id="inicio">
   <div class="hero-bg"></div>
+  <img class="hero-img" src="https://images.pexels.com/photos/8550646/pexels-photo-8550646.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&amp;h=1080&amp;dpr=1" alt="Taller de mecánica de motos" loading="lazy">
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,13,15,0.92) 30%,rgba(13,13,15,0.4) 70%,transparent);z-index:0;"></div>
   <svg class="gear-art" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="50" cy="50" r="48" stroke="#FF6500" stroke-width="0.5"/>
-    <circle cx="50" cy="50" r="36" stroke="#FF6500" stroke-width="0.5"/>
-    <circle cx="50" cy="50" r="8" stroke="#FF6500" stroke-width="0.5"/>
-    <line x1="50" y1="2" x2="50" y2="14" stroke="#FF6500" stroke-width="2"/>
-    <line x1="50" y1="86" x2="50" y2="98" stroke="#FF6500" stroke-width="2"/>
-    <line x1="2" y1="50" x2="14" y2="50" stroke="#FF6500" stroke-width="2"/>
-    <line x1="86" y1="50" x2="98" y2="50" stroke="#FF6500" stroke-width="2"/>
-    <line x1="14.6" y1="14.6" x2="22.7" y2="22.7" stroke="#FF6500" stroke-width="2"/>
-    <line x1="77.3" y1="77.3" x2="85.4" y2="85.4" stroke="#FF6500" stroke-width="2"/>
-    <line x1="85.4" y1="14.6" x2="77.3" y2="22.7" stroke="#FF6500" stroke-width="2"/>
-    <line x1="22.7" y1="77.3" x2="14.6" y2="85.4" stroke="#FF6500" stroke-width="2"/>
+    <circle cx="50" cy="50" r="48" stroke="#FF6500" stroke-width="0.5"></circle>
+    <circle cx="50" cy="50" r="36" stroke="#FF6500" stroke-width="0.5"></circle>
+    <circle cx="50" cy="50" r="8" stroke="#FF6500" stroke-width="0.5"></circle>
+    <line x1="50" y1="2" x2="50" y2="14" stroke="#FF6500" stroke-width="2"></line>
+    <line x1="50" y1="86" x2="50" y2="98" stroke="#FF6500" stroke-width="2"></line>
+    <line x1="2" y1="50" x2="14" y2="50" stroke="#FF6500" stroke-width="2"></line>
+    <line x1="86" y1="50" x2="98" y2="50" stroke="#FF6500" stroke-width="2"></line>
+    <line x1="14.6" y1="14.6" x2="22.7" y2="22.7" stroke="#FF6500" stroke-width="2"></line>
+    <line x1="77.3" y1="77.3" x2="85.4" y2="85.4" stroke="#FF6500" stroke-width="2"></line>
+    <line x1="85.4" y1="14.6" x2="77.3" y2="22.7" stroke="#FF6500" stroke-width="2"></line>
+    <line x1="22.7" y1="77.3" x2="14.6" y2="85.4" stroke="#FF6500" stroke-width="2"></line>
   </svg>
   <div class="hero-content">
     <div class="hero-eyebrow">
       <div class="hero-pulse"></div>
-      <span contenteditable="false">Taller Especializado en Arequipa</span>
+      <span contenteditable="true" data-orig="Taller Especializado en Arequipa">Taller Especializado en URUBAMBA</span>
     </div>
     <h1 class="hero-title">
-      <div contenteditable="false">URUMOTOS</div>
-      <div class="line2" contenteditable="false">SOLUTION</div>
+      <div contenteditable="true" data-orig="URUMOTOS">URUMOTOS</div>
+      <div class="line2" contenteditable="true" data-orig="SOLUTION">SOLUTION</div>
     </h1>
-    <p class="hero-desc" contenteditable="false">
+    <p class="hero-desc" contenteditable="true" data-orig="
+      Tu moto merece lo mejor. Mecánica experta, diagnóstico preciso y atención personalizada para mantener tu moto siempre en óptimas condiciones.
+    ">
       Tu moto merece lo mejor. Mecánica experta, diagnóstico preciso y atención personalizada para mantener tu moto siempre en óptimas condiciones.
     </p>
     <div class="hero-cta">
@@ -532,20 +559,20 @@ footer{
     </div>
     <div class="hero-stats">
       <div class="stat">
-        <div class="stat-num" contenteditable="false">12+</div>
-        <div class="stat-label" contenteditable="false">Años de experiencia</div>
+        <div class="stat-num" contenteditable="true" data-orig="12+">12+</div>
+        <div class="stat-label" contenteditable="true" data-orig="Años de experiencia">Años de experiencia</div>
       </div>
       <div class="stat">
-        <div class="stat-num" contenteditable="false">3,400+</div>
-        <div class="stat-label" contenteditable="false">Motos atendidas</div>
+        <div class="stat-num" contenteditable="true" data-orig="3,400+">3,400+</div>
+        <div class="stat-label" contenteditable="true" data-orig="Motos atendidas">Motos atendidas</div>
       </div>
       <div class="stat">
-        <div class="stat-num" contenteditable="false">98%</div>
-        <div class="stat-label" contenteditable="false">Clientes satisfechos</div>
+        <div class="stat-num" contenteditable="true" data-orig="98%">98%</div>
+        <div class="stat-label" contenteditable="true" data-orig="Clientes satisfechos">Clientes satisfechos</div>
       </div>
       <div class="stat">
-        <div class="stat-num" contenteditable="false">24h</div>
-        <div class="stat-label" contenteditable="false">Servicio de emergencia</div>
+        <div class="stat-num" contenteditable="true" data-orig="24h">24h</div>
+        <div class="stat-label" contenteditable="true" data-orig="Servicio de emergencia">Servicio de emergencia</div>
       </div>
     </div>
   </div>
@@ -556,57 +583,51 @@ footer{
   <div class="container">
     <div class="about-grid">
       <div class="about-image-wrap">
-        <div class="about-img-box">
-          <svg viewBox="0 0 120 80" fill="none">
-            <ellipse cx="60" cy="50" rx="50" ry="20" stroke="#FF6500" stroke-width="1.5"/>
-            <circle cx="25" cy="52" r="18" stroke="#FF6500" stroke-width="2"/>
-            <circle cx="25" cy="52" r="6" fill="#FF6500" opacity=".5"/>
-            <circle cx="95" cy="52" r="18" stroke="#FF6500" stroke-width="2"/>
-            <circle cx="95" cy="52" r="6" fill="#FF6500" opacity=".5"/>
-            <path d="M40 40 L55 25 L75 30 L85 40" stroke="#FF6500" stroke-width="2" stroke-linecap="round"/>
-            <rect x="55" y="18" width="22" height="14" rx="3" stroke="#FF6500" stroke-width="1.5"/>
-          </svg>
+        <div class="about-img-box" style="background:none;border:none;">
+          <img src="https://images.pexels.com/photos/11890953/pexels-photo-11890953.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=600&amp;dpr=1" alt="Nuestro taller de mecánica de motos" loading="lazy" style="border-radius:8px;border:1px solid var(--border);">
         </div>
         <div class="about-badge">
-          <div contenteditable="false">DESDE</div>
-          <div style="font-size:36px;" contenteditable="false">2012</div>
-          <small contenteditable="false">AREQUIPA, PERÚ</small>
+          <div contenteditable="true" data-orig="DESDE">DESDE</div>
+          <div style="font-size:36px;" contenteditable="true" data-orig="2012">2012</div>
+          <small contenteditable="true" data-orig="AREQUIPA, PERÚ">URUBAMBA, CUSCO, PERÚ</small>
         </div>
       </div>
       <div>
-        <div class="section-label" contenteditable="false">Quiénes somos</div>
-        <h2 class="section-title" contenteditable="false">PASIÓN POR<br/>LAS <span class="orange">MOTOS</span></h2>
+        <div class="section-label" contenteditable="true" data-orig="Quiénes somos">Quiénes somos</div>
+        <h2 class="section-title" contenteditable="true" data-orig="PASIÓN POR&lt;br&gt;LAS &lt;span class=&quot;orange&quot;&gt;MOTOS&lt;/span&gt;">PASIÓN POR<br>LAS <span class="orange">MOTOS</span></h2>
         <div class="divider"></div>
-        <p class="section-sub" contenteditable="false">
+        <p class="section-sub" contenteditable="true" data-orig="
           Somos un taller mecánico especializado con más de 12 años sirviendo a los motociclistas de Arequipa. Nuestro equipo de técnicos certificados trabaja con precisión, honestidad y amor por las dos ruedas.
+        ">
+          Somos un taller mecánico especializado con más de 12 años sirviendo a los motociclistas de Urubamba. Nuestro equipo de técnicos certificados trabaja con precisión, honestidad y amor por las dos ruedas.
         </p>
         <ul class="values-list" style="margin-top:28px;">
           <li>
             <div class="val-icon">🎯</div>
             <div class="val-text">
-              <strong contenteditable="false">Diagnóstico preciso</strong>
-              <span contenteditable="false">Usamos tecnología de punta para encontrar el problema exacto.</span>
+              <strong contenteditable="true" data-orig="Diagnóstico preciso">Diagnóstico preciso</strong>
+              <span contenteditable="true" data-orig="Usamos tecnología de punta para encontrar el problema exacto.">Usamos tecnología de punta para encontrar el problema exacto.</span>
             </div>
           </li>
           <li>
             <div class="val-icon">🔩</div>
             <div class="val-text">
-              <strong contenteditable="false">Repuestos originales</strong>
-              <span contenteditable="false">Trabajamos solo con piezas de calidad y garantía de fábrica.</span>
+              <strong contenteditable="true" data-orig="Repuestos originales">Repuestos originales</strong>
+              <span contenteditable="true" data-orig="Trabajamos solo con piezas de calidad y garantía de fábrica.">Trabajamos solo con piezas de calidad y garantía de fábrica.</span>
             </div>
           </li>
           <li>
             <div class="val-icon">⏱️</div>
             <div class="val-text">
-              <strong contenteditable="false">Entrega puntual</strong>
-              <span contenteditable="false">Respetamos los tiempos pactados porque sabemos que tu moto es esencial.</span>
+              <strong contenteditable="true" data-orig="Entrega puntual">Entrega puntual</strong>
+              <span contenteditable="true" data-orig="Respetamos los tiempos pactados porque sabemos que tu moto es esencial.">Respetamos los tiempos pactados porque sabemos que tu moto es esencial.</span>
             </div>
           </li>
           <li>
             <div class="val-icon">🛡️</div>
             <div class="val-text">
-              <strong contenteditable="false">Garantía en todo trabajo</strong>
-              <span contenteditable="false">Todos nuestros servicios tienen garantía escrita para tu tranquilidad.</span>
+              <strong contenteditable="true" data-orig="Garantía en todo trabajo">Garantía en todo trabajo</strong>
+              <span contenteditable="true" data-orig="Todos nuestros servicios tienen garantía escrita para tu tranquilidad.">Todos nuestros servicios tienen garantía escrita para tu tranquilidad.</span>
             </div>
           </li>
         </ul>
@@ -618,46 +639,52 @@ footer{
 <!-- ===================== 3. SERVICIOS ===================== -->
 <section id="servicios">
   <div class="container">
-    <div class="section-label" contenteditable="false">Lo que hacemos</div>
-    <h2 class="section-title" contenteditable="false">NUESTROS<br/><span class="orange">SERVICIOS</span></h2>
+    <div class="section-label" contenteditable="true" data-orig="Lo que hacemos">Lo que hacemos</div>
+    <h2 class="section-title" contenteditable="true" data-orig="NUESTROS&lt;br&gt;&lt;span class=&quot;orange&quot;&gt;SERVICIOS&lt;/span&gt;">NUESTROS<br><span class="orange">SERVICIOS</span></h2>
     <div class="divider"></div>
-    <p class="section-sub" contenteditable="false">Soluciones completas para mantener tu moto en perfecto estado.</p>
+    <p class="section-sub" contenteditable="true" data-orig="Soluciones completas para mantener tu moto en perfecto estado.">Soluciones completas para mantener tu moto en perfecto estado.</p>
     <div class="services-grid">
       <div class="service-card">
+        <img class="svc-img" src="https://images.pexels.com/photos/8550641/pexels-photo-8550641.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600&amp;h=338&amp;dpr=1" alt="Mantenimiento Preventivo" loading="lazy">
         <div class="svc-icon">🔧</div>
-        <div class="svc-title" contenteditable="false">Mantenimiento Preventivo</div>
-        <div class="svc-desc" contenteditable="false">Cambio de aceite, filtros, bujías y revisión completa de todos los sistemas de tu moto para evitar fallas.</div>
-        <div class="svc-price" contenteditable="false">Desde S/ 80</div>
+        <div class="svc-title" contenteditable="true" data-orig="Mantenimiento Preventivo">Mantenimiento Preventivo</div>
+        <div class="svc-desc" contenteditable="true" data-orig="Cambio de aceite, filtros, bujías y revisión completa de todos los sistemas de tu moto para evitar fallas.">Cambio de aceite, filtros, bujías y revisión completa de todos los sistemas de tu moto para evitar fallas.</div>
+        <div class="svc-price" contenteditable="true" data-orig="Desde S/ 80">Desde S/ 80</div>
       </div>
       <div class="service-card">
+        <img class="svc-img" src="https://images.pexels.com/photos/11890959/pexels-photo-11890959.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600&amp;h=338&amp;dpr=1" alt="Mecánica General" loading="lazy">
         <div class="svc-icon">⚙️</div>
-        <div class="svc-title" contenteditable="false">Mecánica General</div>
-        <div class="svc-desc" contenteditable="false">Reparación de motor, transmisión, frenos, embrague y todos los componentes mecánicos de tu motocicleta.</div>
-        <div class="svc-price" contenteditable="false">Desde S/ 150</div>
+        <div class="svc-title" contenteditable="true" data-orig="Mecánica General">Mecánica General</div>
+        <div class="svc-desc" contenteditable="true" data-orig="Reparación de motor, transmisión, frenos, embrague y todos los componentes mecánicos de tu motocicleta.">Reparación de motor, transmisión, frenos, embrague y todos los componentes mecánicos de tu motocicleta.</div>
+        <div class="svc-price" contenteditable="true" data-orig="Desde S/ 150">Desde S/ 150</div>
       </div>
       <div class="service-card">
+        <img class="svc-img" src="https://images.pexels.com/photos/8550638/pexels-photo-8550638.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600&amp;h=338&amp;dpr=1" alt="Sistema Eléctrico" loading="lazy">
         <div class="svc-icon">💡</div>
-        <div class="svc-title" contenteditable="false">Sistema Eléctrico</div>
-        <div class="svc-desc" contenteditable="false">Diagnóstico y reparación de sistema eléctrico, inyección electrónica, alarmas y accesorios eléctricos.</div>
-        <div class="svc-price" contenteditable="false">Desde S/ 60</div>
+        <div class="svc-title" contenteditable="true" data-orig="Sistema Eléctrico">Sistema Eléctrico</div>
+        <div class="svc-desc" contenteditable="true" data-orig="Diagnóstico y reparación de sistema eléctrico, inyección electrónica, alarmas y accesorios eléctricos.">Diagnóstico y reparación de sistema eléctrico, inyección electrónica, alarmas y accesorios eléctricos.</div>
+        <div class="svc-price" contenteditable="true" data-orig="Desde S/ 60">Desde S/ 60</div>
       </div>
       <div class="service-card">
+        <img class="svc-img" src="https://images.pexels.com/photos/8550664/pexels-photo-8550664.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600&amp;h=338&amp;dpr=1" alt="Afinación de Motor" loading="lazy">
         <div class="svc-icon">🏁</div>
-        <div class="svc-title" contenteditable="false">Afinación de Motor</div>
-        <div class="svc-desc" contenteditable="false">Optimizamos el rendimiento y potencia de tu moto con regulación precisa del carburador o inyección.</div>
-        <div class="svc-price" contenteditable="false">Desde S/ 120</div>
+        <div class="svc-title" contenteditable="true" data-orig="Afinación de Motor">Afinación de Motor</div>
+        <div class="svc-desc" contenteditable="true" data-orig="Optimizamos el rendimiento y potencia de tu moto con regulación precisa del carburador o inyección.">Optimizamos el rendimiento y potencia de tu moto con regulación precisa del carburador o inyección.</div>
+        <div class="svc-price" contenteditable="true" data-orig="Desde S/ 120">Desde S/ 120</div>
       </div>
       <div class="service-card">
+        <img class="svc-img" src="https://images.pexels.com/photos/3806255/pexels-photo-3806255.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600&amp;h=338&amp;dpr=1" alt="Frenos y Suspensión" loading="lazy">
         <div class="svc-icon">🛞</div>
-        <div class="svc-title" contenteditable="false">Frenos y Suspensión</div>
-        <div class="svc-desc" contenteditable="false">Revisión, ajuste y cambio de pastillas, discos, líquido de frenos y amortiguadores para mayor seguridad.</div>
-        <div class="svc-price" contenteditable="false">Desde S/ 90</div>
+        <div class="svc-title" contenteditable="true" data-orig="Frenos y Suspensión">Frenos y Suspensión</div>
+        <div class="svc-desc" contenteditable="true" data-orig="Revisión, ajuste y cambio de pastillas, discos, líquido de frenos y amortiguadores para mayor seguridad.">Revisión, ajuste y cambio de pastillas, discos, líquido de frenos y amortiguadores para mayor seguridad.</div>
+        <div class="svc-price" contenteditable="true" data-orig="Desde S/ 90">Desde S/ 90</div>
       </div>
       <div class="service-card">
+        <img class="svc-img" src="https://images.pexels.com/photos/9607214/pexels-photo-9607214.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600&amp;h=338&amp;dpr=1" alt="Personalización" loading="lazy">
         <div class="svc-icon">🎨</div>
-        <div class="svc-title" contenteditable="false">Personalización</div>
-        <div class="svc-desc" contenteditable="false">Dale un look único a tu moto con accesorios, pintura, retrovisores, manubrios y más modificaciones.</div>
-        <div class="svc-price" contenteditable="false">Consultar precio</div>
+        <div class="svc-title" contenteditable="true" data-orig="Personalización">Personalización</div>
+        <div class="svc-desc" contenteditable="true" data-orig="Dale un look único a tu moto con accesorios, pintura, retrovisores, manubrios y más modificaciones.">Dale un look único a tu moto con accesorios, pintura, retrovisores, manubrios y más modificaciones.</div>
+        <div class="svc-price" contenteditable="true" data-orig="Consultar precio">Consultar precio</div>
       </div>
     </div>
   </div>
@@ -666,17 +693,19 @@ footer{
 <!-- ===================== 4. EQUIPO ===================== -->
 <section id="equipo">
   <div class="container">
-    <div class="section-label" contenteditable="false">Nuestro staff</div>
-    <h2 class="section-title" contenteditable="false">EL <span class="orange">EQUIPO</span></h2>
+    <div class="section-label" contenteditable="true" data-orig="Nuestro staff">Nuestro staff</div>
+    <h2 class="section-title" contenteditable="true" data-orig="EL &lt;span class=&quot;orange&quot;&gt;EQUIPO&lt;/span&gt;">EL <span class="orange">EQUIPO</span></h2>
     <div class="divider"></div>
-    <p class="section-sub" contenteditable="false">Técnicos certificados y apasionados por las motocicletas.</p>
+    <p class="section-sub" contenteditable="true" data-orig="Técnicos certificados y apasionados por las motocicletas.">Técnicos certificados y apasionados por las motocicletas.</p>
     <div class="team-grid">
       <div class="team-card">
-        <div class="team-photo">👨‍🔧</div>
+        <div class="team-photo">
+          <img src="https://images.pexels.com/photos/11536993/pexels-photo-11536993.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400&amp;h=300&amp;dpr=1" alt="Carlos Mamani" loading="lazy">
+        </div>
         <div class="team-info">
-          <div class="team-name" contenteditable="false">Carlos Mamani</div>
-          <div class="team-role" contenteditable="false">Jefe de Taller</div>
-          <div class="team-exp" contenteditable="false">15 años de experiencia · Certificado Honda & Yamaha</div>
+          <div class="team-name" contenteditable="true" data-orig="Carlos Mamani">Carlos Mamani</div>
+          <div class="team-role" contenteditable="true" data-orig="Jefe de Taller">Jefe de Taller</div>
+          <div class="team-exp" contenteditable="true" data-orig="15 años de experiencia · Certificado Honda &amp;amp; Yamaha">15 años de experiencia · Certificado Honda &amp; Yamaha</div>
           <div class="team-social">
             <button class="social-btn">📘</button>
             <button class="social-btn">📸</button>
@@ -685,11 +714,13 @@ footer{
         </div>
       </div>
       <div class="team-card">
-        <div class="team-photo">🔧</div>
+        <div class="team-photo">
+          <img src="https://images.pexels.com/photos/12741656/pexels-photo-12741656.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400&amp;h=300&amp;dpr=1" alt="Jorge Quispe" loading="lazy">
+        </div>
         <div class="team-info">
-          <div class="team-name" contenteditable="false">Jorge Quispe</div>
-          <div class="team-role" contenteditable="false">Mecánico Senior</div>
-          <div class="team-exp" contenteditable="false">10 años de experiencia · Especialista en motores</div>
+          <div class="team-name" contenteditable="true" data-orig="Jorge Quispe">Jorge Quispe</div>
+          <div class="team-role" contenteditable="true" data-orig="Mecánico Senior">Mecánico Senior</div>
+          <div class="team-exp" contenteditable="true" data-orig="10 años de experiencia · Especialista en motores">10 años de experiencia · Especialista en motores</div>
           <div class="team-social">
             <button class="social-btn">📘</button>
             <button class="social-btn">📸</button>
@@ -697,11 +728,13 @@ footer{
         </div>
       </div>
       <div class="team-card">
-        <div class="team-photo">⚡</div>
+        <div class="team-photo">
+          <img src="https://images.pexels.com/photos/11890959/pexels-photo-11890959.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400&amp;h=300&amp;dpr=1" alt="Luis Flores" loading="lazy">
+        </div>
         <div class="team-info">
-          <div class="team-name" contenteditable="false">Luis Flores</div>
-          <div class="team-role" contenteditable="false">Electricista Automotriz</div>
-          <div class="team-exp" contenteditable="false">8 años de experiencia · Diagnóstico electrónico avanzado</div>
+          <div class="team-name" contenteditable="true" data-orig="Luis Flores">Luis Flores</div>
+          <div class="team-role" contenteditable="true" data-orig="Electricista Automotriz">Electricista Automotriz</div>
+          <div class="team-exp" contenteditable="true" data-orig="8 años de experiencia · Diagnóstico electrónico avanzado">8 años de experiencia · Diagnóstico electrónico avanzado</div>
           <div class="team-social">
             <button class="social-btn">📘</button>
             <button class="social-btn">📸</button>
@@ -709,11 +742,13 @@ footer{
         </div>
       </div>
       <div class="team-card">
-        <div class="team-photo">🏍️</div>
+        <div class="team-photo">
+          <img src="https://images.pexels.com/photos/9606745/pexels-photo-9606745.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400&amp;h=300&amp;dpr=1" alt="Ana Ccari" loading="lazy">
+        </div>
         <div class="team-info">
-          <div class="team-name" contenteditable="false">Ana Ccari</div>
-          <div class="team-role" contenteditable="false">Atención al Cliente</div>
-          <div class="team-exp" contenteditable="false">6 años en el taller · Coordinación y presupuestos</div>
+          <div class="team-name" contenteditable="true" data-orig="Ana Ccari">Ana Ccari</div>
+          <div class="team-role" contenteditable="true" data-orig="Atención al Cliente">Atención al Cliente</div>
+          <div class="team-exp" contenteditable="true" data-orig="6 años en el taller · Coordinación y presupuestos">6 años en el taller · Coordinación y presupuestos</div>
           <div class="team-social">
             <button class="social-btn">📘</button>
             <button class="social-btn">📸</button>
@@ -727,27 +762,61 @@ footer{
 <!-- ===================== 5. GALERÍA ===================== -->
 <section id="galeria">
   <div class="container">
-    <div class="section-label" contenteditable="false">Nuestros trabajos</div>
-    <h2 class="section-title" contenteditable="false">GALERÍA DE<br/><span class="orange">TRABAJOS</span></h2>
+    <div class="section-label" contenteditable="true" data-orig="Nuestros trabajos">Nuestros trabajos</div>
+    <h2 class="section-title" contenteditable="true" data-orig="GALERÍA DE&lt;br&gt;&lt;span class=&quot;orange&quot;&gt;TRABAJOS&lt;/span&gt;">GALERÍA DE<br><span class="orange">TRABAJOS</span></h2>
     <div class="divider"></div>
     <div class="gallery-grid">
-      <div class="gal-item large" style="font-size:80px;">🏍️
-        <div class="gal-overlay"><span class="gal-caption" contenteditable="false">Restauración completa Honda CB500</span></div>
+      <div class="gal-item large">
+        <img src="https://images.pexels.com/photos/8550646/pexels-photo-8550646.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=500&amp;dpr=1" alt="Restauración completa Honda CB500" loading="lazy">
+        <div class="gal-overlay"><span class="gal-caption" contenteditable="true" data-orig="Restauración completa Honda CB500">Restauración completa Honda CB500</span></div>
       </div>
-      <div class="gal-item" style="font-size:60px;">⚙️
-        <div class="gal-overlay"><span class="gal-caption" contenteditable="false">Overhaul de motor Yamaha R3</span></div>
+      <div class="gal-item">
+        <img src="https://images.pexels.com/photos/8550666/pexels-photo-8550666.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600&amp;h=450&amp;dpr=1" alt="Overhaul de motor Yamaha R3" loading="lazy">
+        <div class="gal-overlay"><span class="gal-caption" contenteditable="true" data-orig="Overhaul de motor Yamaha R3">Overhaul de motor Yamaha R3</span></div>
       </div>
-      <div class="gal-item" style="font-size:60px;">🔧
-        <div class="gal-overlay"><span class="gal-caption" contenteditable="false">Servicio de frenos KTM Duke</span></div>
+      <div class="gal-item">
+        <img src="https://images.pexels.com/photos/5803351/pexels-photo-5803351.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600&amp;h=450&amp;dpr=1" alt="Servicio de frenos KTM Duke" loading="lazy">
+        <div class="gal-overlay"><span class="gal-caption" contenteditable="true" data-orig="Servicio de frenos KTM Duke">Servicio de frenos KTM Duke</span></div>
       </div>
-      <div class="gal-item" style="font-size:60px;">💡
-        <div class="gal-overlay"><span class="gal-caption" contenteditable="false">Sistema eléctrico Kawasaki</span></div>
+      <div class="gal-item">
+        <img src="https://images.pexels.com/photos/5252118/pexels-photo-5252118.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600&amp;h=450&amp;dpr=1" alt="Sistema eléctrico Kawasaki" loading="lazy">
+        <div class="gal-overlay"><span class="gal-caption" contenteditable="true" data-orig="Sistema eléctrico Kawasaki">Sistema eléctrico Kawasaki</span></div>
       </div>
-      <div class="gal-item large" style="font-size:80px;">🛞
-        <div class="gal-overlay"><span class="gal-caption" contenteditable="false">Cambio de llantas y alineación Suzuki GS</span></div>
+      <div class="gal-item large">
+        <img src="https://images.pexels.com/photos/8550641/pexels-photo-8550641.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=500&amp;dpr=1" alt="Cambio de llantas y alineación Suzuki GS" loading="lazy">
+        <div class="gal-overlay"><span class="gal-caption" contenteditable="true" data-orig="Cambio de llantas y alineación Suzuki GS">Cambio de llantas y alineación Suzuki GS</span></div>
       </div>
-      <div class="gal-item" style="font-size:60px;">🎨
-        <div class="gal-overlay"><span class="gal-caption" contenteditable="false">Custom Honda CG 150</span></div>
+      <div class="gal-item">
+        <img src="https://images.pexels.com/photos/5794260/pexels-photo-5794260.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600&amp;h=450&amp;dpr=1" alt="Custom Honda CG 150" loading="lazy">
+        <div class="gal-overlay"><span class="gal-caption" contenteditable="true" data-orig="Custom Honda CG 150">Custom Honda CG 150</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VIDEO ===================== -->
+<section id="video" class="video-section">
+  <div class="container">
+    <div class="section-label" contenteditable="true" data-orig="Contenido audiovisual">Contenido audiovisual</div>
+    <h2 class="section-title" contenteditable="true" data-orig="VIDEO &lt;span class=&quot;orange&quot;&gt;GALERÍA&lt;/span&gt;">VIDEO <span class="orange">GALERÍA</span></h2>
+    <div class="divider"></div>
+    <p class="section-sub" contenteditable="true" data-orig="Mira nuestro taller en acción y conoce el trabajo que hacemos día a día.">Mira nuestro taller en acción y conoce el trabajo que hacemos día a día.</p>
+    <div class="video-grid">
+      <div>
+        <div class="video-wrapper">
+          <video controls="" poster="https://images.pexels.com/videos/8551062/adult-appoint-big-kid-bike-8551062.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280&amp;h=720&amp;dpr=1">
+            <source src="https://videos.pexels.com/video-files/8551062/8551062-hd_1920_1080_30fps.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p style="margin-top:12px;font-size:13px;color:var(--gray);" contenteditable="true" data-orig="Reparación y mantenimiento profesional de motocicletas">Reparación y mantenimiento profesional de motocicletas</p>
+      </div>
+      <div>
+        <div class="video-wrapper">
+          <video controls="" poster="https://images.pexels.com/videos/8551237/accident-adult-auto-racing-big-kid-8551237.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280&amp;h=720&amp;dpr=1">
+            <source src="https://videos.pexels.com/video-files/8551237/8551237-hd_1080_1920_30fps.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p style="margin-top:12px;font-size:13px;color:var(--gray);" contenteditable="true" data-orig="Trabajo en equipo y pasión por las dos ruedas">Trabajo en equipo y pasión por las dos ruedas</p>
       </div>
     </div>
   </div>
@@ -756,51 +825,51 @@ footer{
 <!-- ===================== 6. PRECIOS ===================== -->
 <section id="precios">
   <div class="container">
-    <div class="section-label" contenteditable="false">Planes y tarifas</div>
-    <h2 class="section-title" contenteditable="false">PLANES DE<br/><span class="orange">MANTENIMIENTO</span></h2>
+    <div class="section-label" contenteditable="true" data-orig="Planes y tarifas">Planes y tarifas</div>
+    <h2 class="section-title" contenteditable="true" data-orig="PLANES DE&lt;br&gt;&lt;span class=&quot;orange&quot;&gt;MANTENIMIENTO&lt;/span&gt;">PLANES DE<br><span class="orange">MANTENIMIENTO</span></h2>
     <div class="divider"></div>
-    <p class="section-sub" contenteditable="false">Escoge el plan que mejor se adapte a tu moto y presupuesto.</p>
+    <p class="section-sub" contenteditable="true" data-orig="Escoge el plan que mejor se adapte a tu moto y presupuesto.">Escoge el plan que mejor se adapte a tu moto y presupuesto.</p>
     <div class="prices-grid">
       <div class="price-card">
-        <div class="price-plan" contenteditable="false">Básico</div>
-        <div class="price-amount"><span class="currency">S/</span><span contenteditable="false">89</span></div>
-        <div class="price-period" contenteditable="false">Por servicio</div>
+        <div class="price-plan" contenteditable="true" data-orig="Básico">Básico</div>
+        <div class="price-amount"><span class="currency">S/</span><span contenteditable="true" data-orig="89">89</span></div>
+        <div class="price-period" contenteditable="true" data-orig="Por servicio">Por servicio</div>
         <ul class="price-features">
-          <li><span contenteditable="false">Cambio de aceite y filtro</span></li>
-          <li><span contenteditable="false">Revisión de frenos</span></li>
-          <li><span contenteditable="false">Inspección visual general</span></li>
-          <li><span contenteditable="false">Limpieza de carburador</span></li>
-          <li class="no"><span contenteditable="false">Diagnóstico electrónico</span></li>
-          <li class="no"><span contenteditable="false">Mantenimiento de transmisión</span></li>
+          <li><span contenteditable="true" data-orig="Cambio de aceite y filtro">Cambio de aceite y filtro</span></li>
+          <li><span contenteditable="true" data-orig="Revisión de frenos">Revisión de frenos</span></li>
+          <li><span contenteditable="true" data-orig="Inspección visual general">Inspección visual general</span></li>
+          <li><span contenteditable="true" data-orig="Limpieza de carburador">Limpieza de carburador</span></li>
+          <li class="no"><span contenteditable="true" data-orig="Diagnóstico electrónico">Diagnóstico electrónico</span></li>
+          <li class="no"><span contenteditable="true" data-orig="Mantenimiento de transmisión">Mantenimiento de transmisión</span></li>
         </ul>
         <a href="#contacto" class="btn-outline" style="width:100%;text-align:center;display:block;">Contratar</a>
       </div>
       <div class="price-card featured">
-        <div class="price-badge" contenteditable="false">🔥 Más popular</div>
-        <div class="price-plan" contenteditable="false">Completo</div>
-        <div class="price-amount"><span class="currency">S/</span><span contenteditable="false">179</span></div>
-        <div class="price-period" contenteditable="false">Por servicio</div>
+        <div class="price-badge" contenteditable="true" data-orig="🔥 Más popular">🔥 Más popular</div>
+        <div class="price-plan" contenteditable="true" data-orig="Completo">Completo</div>
+        <div class="price-amount"><span class="currency">S/</span><span contenteditable="true" data-orig="179">179</span></div>
+        <div class="price-period" contenteditable="true" data-orig="Por servicio">Por servicio</div>
         <ul class="price-features">
-          <li><span contenteditable="false">Todo lo del plan Básico</span></li>
-          <li><span contenteditable="false">Diagnóstico electrónico</span></li>
-          <li><span contenteditable="false">Ajuste de motor completo</span></li>
-          <li><span contenteditable="false">Revisión de suspensión</span></li>
-          <li><span contenteditable="false">Limpieza profunda general</span></li>
-          <li class="no"><span contenteditable="false">Cambio de piezas incluido</span></li>
+          <li><span contenteditable="true" data-orig="Todo lo del plan Básico">Todo lo del plan Básico</span></li>
+          <li><span contenteditable="true" data-orig="Diagnóstico electrónico">Diagnóstico electrónico</span></li>
+          <li><span contenteditable="true" data-orig="Ajuste de motor completo">Ajuste de motor completo</span></li>
+          <li><span contenteditable="true" data-orig="Revisión de suspensión">Revisión de suspensión</span></li>
+          <li><span contenteditable="true" data-orig="Limpieza profunda general">Limpieza profunda general</span></li>
+          <li class="no"><span contenteditable="true" data-orig="Cambio de piezas incluido">Cambio de piezas incluido</span></li>
         </ul>
         <a href="#contacto" class="btn-primary" style="width:100%;text-align:center;display:block;">Contratar</a>
       </div>
       <div class="price-card">
-        <div class="price-plan" contenteditable="false">Premium</div>
-        <div class="price-amount"><span class="currency">S/</span><span contenteditable="false">320</span></div>
-        <div class="price-period" contenteditable="false">Por servicio</div>
+        <div class="price-plan" contenteditable="true" data-orig="Premium">Premium</div>
+        <div class="price-amount"><span class="currency">S/</span><span contenteditable="true" data-orig="320">320</span></div>
+        <div class="price-period" contenteditable="true" data-orig="Por servicio">Por servicio</div>
         <ul class="price-features">
-          <li><span contenteditable="false">Todo lo del plan Completo</span></li>
-          <li><span contenteditable="false">Cambio de piezas de desgaste</span></li>
-          <li><span contenteditable="false">Reporte técnico detallado</span></li>
-          <li><span contenteditable="false">Lavado y pulido incluido</span></li>
-          <li><span contenteditable="false">Garantía extendida 3 meses</span></li>
-          <li><span contenteditable="false">Recojo y entrega a domicilio</span></li>
+          <li><span contenteditable="true" data-orig="Todo lo del plan Completo">Todo lo del plan Completo</span></li>
+          <li><span contenteditable="true" data-orig="Cambio de piezas de desgaste">Cambio de piezas de desgaste</span></li>
+          <li><span contenteditable="true" data-orig="Reporte técnico detallado">Reporte técnico detallado</span></li>
+          <li><span contenteditable="true" data-orig="Lavado y pulido incluido">Lavado y pulido incluido</span></li>
+          <li><span contenteditable="true" data-orig="Garantía extendida 3 meses">Garantía extendida 3 meses</span></li>
+          <li><span contenteditable="true" data-orig="Recojo y entrega a domicilio">Recojo y entrega a domicilio</span></li>
         </ul>
         <a href="#contacto" class="btn-outline" style="width:100%;text-align:center;display:block;">Contratar</a>
       </div>
@@ -811,73 +880,73 @@ footer{
 <!-- ===================== 7. TESTIMONIOS ===================== -->
 <section id="testimonios">
   <div class="container">
-    <div class="section-label" contenteditable="false">Lo que dicen de nosotros</div>
-    <h2 class="section-title" contenteditable="false">CLIENTES<br/><span class="orange">SATISFECHOS</span></h2>
+    <div class="section-label" contenteditable="true" data-orig="Lo que dicen de nosotros">Lo que dicen de nosotros</div>
+    <h2 class="section-title" contenteditable="true" data-orig="CLIENTES&lt;br&gt;&lt;span class=&quot;orange&quot;&gt;SATISFECHOS&lt;/span&gt;">CLIENTES<br><span class="orange">SATISFECHOS</span></h2>
     <div class="divider"></div>
     <div class="testimonials-grid">
       <div class="test-card">
-        <div class="test-stars" contenteditable="false">★★★★★</div>
-        <div class="test-text" contenteditable="false">"Excelente trabajo en mi Yamaha FZ. Carlos diagnosticó el problema en minutos y lo repararon rápido. La moto quedó como nueva. ¡Los recomiendo 100%!"</div>
+        <div class="test-stars" contenteditable="true" data-orig="★★★★★">★★★★★</div>
+        <div class="test-text" contenteditable="true" data-orig="&quot;Excelente trabajo en mi Yamaha FZ. Carlos diagnosticó el problema en minutos y lo repararon rápido. La moto quedó como nueva. ¡Los recomiendo 100%!&quot;">"Excelente trabajo en mi Yamaha FZ. Carlos diagnosticó el problema en minutos y lo repararon rápido. La moto quedó como nueva. ¡Los recomiendo 100%!"</div>
         <div class="test-author">
           <div class="test-avatar">👤</div>
           <div>
-            <div class="test-name" contenteditable="false">Roberto Sánchez</div>
-            <div class="test-moto" contenteditable="false">Yamaha FZ 150</div>
+            <div class="test-name" contenteditable="true" data-orig="Roberto Sánchez">Roberto Sánchez</div>
+            <div class="test-moto" contenteditable="true" data-orig="Yamaha FZ 150">Yamaha FZ 150</div>
           </div>
         </div>
       </div>
       <div class="test-card">
-        <div class="test-stars" contenteditable="false">★★★★★</div>
-        <div class="test-text" contenteditable="false">"Llevé mi Honda CB a hacer mantenimiento y quedé encantada. Muy profesionales, honestos con el presupuesto y entregaron a tiempo. ¡El mejor taller de Arequipa!"</div>
+        <div class="test-stars" contenteditable="true" data-orig="★★★★★">★★★★★</div>
+        <div class="test-text" contenteditable="true" data-orig="&quot;Llevé mi Honda CB a hacer mantenimiento y quedé encantada. Muy profesionales, honestos con el presupuesto y entregaron a tiempo. ¡El mejor taller de Arequipa!&quot;">"Llevé mi Honda CB a hacer mantenimiento y quedé encantada. Muy profesionales, honestos con el presupuesto y entregaron a tiempo. ¡El mejor taller de Arequipa!"</div>
         <div class="test-author">
           <div class="test-avatar">👩</div>
           <div>
-            <div class="test-name" contenteditable="false">María Apaza</div>
-            <div class="test-moto" contenteditable="false">Honda CB 190R</div>
+            <div class="test-name" contenteditable="true" data-orig="María Apaza">María Apaza</div>
+            <div class="test-moto" contenteditable="true" data-orig="Honda CB 190R">Honda CB 190R</div>
           </div>
         </div>
       </div>
       <div class="test-card">
-        <div class="test-stars" contenteditable="false">★★★★★</div>
-        <div class="test-text" contenteditable="false">"Tremendo equipo de trabajo. Solucionaron un problema eléctrico que en otros talleres no pudieron. Precio justo y garantía real. Ya no llevo mi moto a ningún otro lado."</div>
+        <div class="test-stars" contenteditable="true" data-orig="★★★★★">★★★★★</div>
+        <div class="test-text" contenteditable="true" data-orig="&quot;Tremendo equipo de trabajo. Solucionaron un problema eléctrico que en otros talleres no pudieron. Precio justo y garantía real. Ya no llevo mi moto a ningún otro lado.&quot;">"Tremendo equipo de trabajo. Solucionaron un problema eléctrico que en otros talleres no pudieron. Precio justo y garantía real. Ya no llevo mi moto a ningún otro lado."</div>
         <div class="test-author">
           <div class="test-avatar">🧔</div>
           <div>
-            <div class="test-name" contenteditable="false">Diego Condori</div>
-            <div class="test-moto" contenteditable="false">Kawasaki Z400</div>
+            <div class="test-name" contenteditable="true" data-orig="Diego Condori">Diego Condori</div>
+            <div class="test-moto" contenteditable="true" data-orig="Kawasaki Z400">Kawasaki Z400</div>
           </div>
         </div>
       </div>
       <div class="test-card">
-        <div class="test-stars" contenteditable="false">★★★★☆</div>
-        <div class="test-text" contenteditable="false">"Buen servicio, personal muy atento y conocedor. Mi KTM salió perfecta después del mantenimiento preventivo. El taller está muy bien equipado."</div>
+        <div class="test-stars" contenteditable="true" data-orig="★★★★☆">★★★★☆</div>
+        <div class="test-text" contenteditable="true" data-orig="&quot;Buen servicio, personal muy atento y conocedor. Mi KTM salió perfecta después del mantenimiento preventivo. El taller está muy bien equipado.&quot;">"Buen servicio, personal muy atento y conocedor. Mi KTM salió perfecta después del mantenimiento preventivo. El taller está muy bien equipado."</div>
         <div class="test-author">
           <div class="test-avatar">👨</div>
           <div>
-            <div class="test-name" contenteditable="false">Alexis Turpo</div>
-            <div class="test-moto" contenteditable="false">KTM Duke 200</div>
+            <div class="test-name" contenteditable="true" data-orig="Alexis Turpo">Alexis Turpo</div>
+            <div class="test-moto" contenteditable="true" data-orig="KTM Duke 200">KTM Duke 200</div>
           </div>
         </div>
       </div>
       <div class="test-card">
-        <div class="test-stars" contenteditable="false">★★★★★</div>
-        <div class="test-text" contenteditable="false">"Primera vez yendo y me trataron de maravilla. Me explicaron todo el trabajo que harían antes de hacerlo. Sin sorpresas en el precio. Definitivamente mi taller de confianza."</div>
+        <div class="test-stars" contenteditable="true" data-orig="★★★★★">★★★★★</div>
+        <div class="test-text" contenteditable="true" data-orig="&quot;Primera vez yendo y me trataron de maravilla. Me explicaron todo el trabajo que harían antes de hacerlo. Sin sorpresas en el precio. Definitivamente mi taller de confianza.&quot;">"Primera vez yendo y me trataron de maravilla. Me explicaron todo el trabajo que harían antes de hacerlo. Sin sorpresas en el precio. Definitivamente mi taller de confianza."</div>
         <div class="test-author">
           <div class="test-avatar">👩‍🦱</div>
           <div>
-            <div class="test-name" contenteditable="false">Paola Medina</div>
-            <div class="test-moto" contenteditable="false">Suzuki GSX 150</div>
+            <div class="test-name" contenteditable="true" data-orig="Paola Medina">Paola Medina</div>
+            <div class="test-moto" contenteditable="true" data-orig="Suzuki GSX 150">Suzuki GSX 150</div>
           </div>
         </div>
       </div>
       <div class="test-card">
-        <div class="test-stars" contenteditable="false">★★★★★</div>
-        <div class="test-text" contenteditable="false">"Vinieron a recoger mi moto porque no prendía. La repararon y la entregaron en mi casa. Un servicio premium a precio justo. ¡Qué comodidad y profesionalismo!"</div>
+        <div class="test-stars" contenteditable="true" data-orig="★★★★★">★★★★★</div>
+        <div class="test-text" contenteditable="true" data-orig="&quot;Vinieron a recoger mi moto porque no prendía. La repararon y la entregaron en mi casa. Un servicio premium a precio justo. ¡Qué comodidad y profesionalismo!&quot;">"Vinieron a recoger mi moto porque no prendía. La repararon y la entregaron en mi casa. Un servicio premium a precio justo. ¡Qué comodidad y profesionalismo!"</div>
         <div class="test-author">
           <div class="test-avatar">👴</div>
           <div>
-            <div class="test-name" contenteditable="false">Victor Peralta</div>
-            <div class="test-moto" contenteditable="false">Honda Wave 110</div>
+            <div class="test-name" contenteditable="true" data-orig="Victor Peralta">Victor Peralta</div>
+            <div class="test-moto" contenteditable="true" data-orig="Honda Wave 110">Honda Wave 110</div>
           </div>
         </div>
       </div>
@@ -888,43 +957,49 @@ footer{
 <!-- ===================== 8. BLOG ===================== -->
 <section id="blog">
   <div class="container">
-    <div class="section-label" contenteditable="false">Consejos y novedades</div>
-    <h2 class="section-title" contenteditable="false">BLOG &<br/><span class="orange">CONSEJOS</span></h2>
+    <div class="section-label" contenteditable="true" data-orig="Consejos y novedades">Consejos y novedades</div>
+    <h2 class="section-title" contenteditable="true" data-orig="BLOG &amp;amp;&lt;br&gt;&lt;span class=&quot;orange&quot;&gt;CONSEJOS&lt;/span&gt;">BLOG &amp;<br><span class="orange">CONSEJOS</span></h2>
     <div class="divider"></div>
-    <p class="section-sub" contenteditable="false">Tips de mecánica, noticias del mundo moto y más.</p>
+    <p class="section-sub" contenteditable="true" data-orig="Tips de mecánica, noticias del mundo moto y más.">Tips de mecánica, noticias del mundo moto y más.</p>
     <div class="blog-grid">
       <div class="blog-card">
-        <div class="blog-thumb">🛢️</div>
+        <div class="blog-thumb">
+          <img src="https://images.pexels.com/photos/8550664/pexels-photo-8550664.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600&amp;h=300&amp;dpr=1" alt="Cambio de aceite de moto" loading="lazy">
+        </div>
         <div class="blog-body">
-          <span class="blog-tag" contenteditable="false">Mantenimiento</span>
-          <div class="blog-title" contenteditable="false">¿Cada cuánto debes cambiar el aceite de tu moto?</div>
-          <div class="blog-excerpt" contenteditable="false">El aceite de motor es la sangre de tu moto. Te explicamos los intervalos correctos según el tipo de motor y aceite que uses.</div>
+          <span class="blog-tag" contenteditable="true" data-orig="Mantenimiento">Mantenimiento</span>
+          <div class="blog-title" contenteditable="true" data-orig="¿Cada cuánto debes cambiar el aceite de tu moto?">¿Cada cuánto debes cambiar el aceite de tu moto?</div>
+          <div class="blog-excerpt" contenteditable="true" data-orig="El aceite de motor es la sangre de tu moto. Te explicamos los intervalos correctos según el tipo de motor y aceite que uses.">El aceite de motor es la sangre de tu moto. Te explicamos los intervalos correctos según el tipo de motor y aceite que uses.</div>
           <div class="blog-meta">
-            <span class="blog-date" contenteditable="false">12 Jul 2025</span>
+            <span class="blog-date" contenteditable="true" data-orig="12 Jul 2025">12 Jul 2025</span>
             <a class="read-more" href="#blog">Leer más →</a>
           </div>
         </div>
       </div>
       <div class="blog-card">
-        <div class="blog-thumb">🌧️</div>
+        <div class="blog-thumb">
+          <img src="https://images.pexels.com/photos/3806255/pexels-photo-3806255.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600&amp;h=300&amp;dpr=1" alt="Conducción segura en lluvia" loading="lazy">
+        </div>
         <div class="blog-body">
-          <span class="blog-tag" contenteditable="false">Seguridad</span>
-          <div class="blog-title" contenteditable="false">Cómo conducir tu moto en días de lluvia sin riesgos</div>
-          <div class="blog-excerpt" contenteditable="false">La temporada de lluvias exige precauciones especiales. Aprende las técnicas y el equipamiento que te mantendrán seguro.</div>
+          <span class="blog-tag" contenteditable="true" data-orig="Seguridad">Seguridad</span>
+          <div class="blog-title" contenteditable="true" data-orig="Cómo conducir tu moto en días de lluvia sin riesgos">Cómo conducir tu moto en días de lluvia sin riesgos</div>
+          <div class="blog-excerpt" contenteditable="true" data-orig="La temporada de lluvias exige precauciones especiales. Aprende las técnicas y el equipamiento que te mantendrán seguro.">La temporada de lluvias exige precauciones especiales. Aprende las técnicas y el equipamiento que te mantendrán seguro.</div>
           <div class="blog-meta">
-            <span class="blog-date" contenteditable="false">5 Jul 2025</span>
+            <span class="blog-date" contenteditable="true" data-orig="5 Jul 2025">5 Jul 2025</span>
             <a class="read-more" href="#blog">Leer más →</a>
           </div>
         </div>
       </div>
       <div class="blog-card">
-        <div class="blog-thumb">🔋</div>
+        <div class="blog-thumb">
+          <img src="https://images.pexels.com/photos/8550638/pexels-photo-8550638.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600&amp;h=300&amp;dpr=1" alt="Batería de moto" loading="lazy">
+        </div>
         <div class="blog-body">
-          <span class="blog-tag" contenteditable="false">Electricidad</span>
-          <div class="blog-title" contenteditable="false">Señales de que la batería de tu moto está fallando</div>
-          <div class="blog-excerpt" contenteditable="false">Arranque lento, luces tenues o chispazo al conectar son señales de alerta. Identifícalas antes de que te deje varado.</div>
+          <span class="blog-tag" contenteditable="true" data-orig="Electricidad">Electricidad</span>
+          <div class="blog-title" contenteditable="true" data-orig="Señales de que la batería de tu moto está fallando">Señales de que la batería de tu moto está fallando</div>
+          <div class="blog-excerpt" contenteditable="true" data-orig="Arranque lento, luces tenues o chispazo al conectar son señales de alerta. Identifícalas antes de que te deje varado.">Arranque lento, luces tenues o chispazo al conectar son señales de alerta. Identifícalas antes de que te deje varado.</div>
           <div class="blog-meta">
-            <span class="blog-date" contenteditable="false">28 Jun 2025</span>
+            <span class="blog-date" contenteditable="true" data-orig="28 Jun 2025">28 Jun 2025</span>
             <a class="read-more" href="#blog">Leer más →</a>
           </div>
         </div>
@@ -936,58 +1011,58 @@ footer{
 <!-- ===================== 9. CONTACTO ===================== -->
 <section id="contacto">
   <div class="container">
-    <div class="section-label" contenteditable="false">Estamos aquí para ti</div>
-    <h2 class="section-title" contenteditable="false">CONTÁCTANOS<br/><span class="orange">HOY</span></h2>
+    <div class="section-label" contenteditable="true" data-orig="Estamos aquí para ti">Estamos aquí para ti</div>
+    <h2 class="section-title" contenteditable="true" data-orig="CONTÁCTANOS&lt;br&gt;&lt;span class=&quot;orange&quot;&gt;HOY&lt;/span&gt;">CONTÁCTANOS<br><span class="orange">HOY</span></h2>
     <div class="divider"></div>
     <div class="contact-grid">
       <div>
-        <p class="section-sub" contenteditable="false">¿Tu moto tiene un problema? ¿Quieres agendar un servicio? Escríbenos o llámanos. Respondemos rápido.</p>
+        <p class="section-sub" contenteditable="true" data-orig="¿Tu moto tiene un problema? ¿Quieres agendar un servicio? Escríbenos o llámanos. Respondemos rápido.">¿Tu moto tiene un problema? ¿Quieres agendar un servicio? Escríbenos o llámanos. Respondemos rápido.</p>
         <div class="contact-info" style="margin-top:30px;">
           <div class="contact-item">
             <div class="contact-icon">📞</div>
             <div>
               <div class="contact-item-title">Teléfono / WhatsApp</div>
-              <div class="contact-item-val" contenteditable="false">+51 951 234 567</div>
+              <div class="contact-item-val" contenteditable="true" data-orig="+51 951 234 567">+51 951 234 567</div>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-icon">📧</div>
             <div>
               <div class="contact-item-title">Correo electrónico</div>
-              <div class="contact-item-val" contenteditable="false">info@urumotossolution.pe</div>
+              <div class="contact-item-val" contenteditable="true" data-orig="info@urumotossolution.pe">info@urumotossolution.pe</div>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-icon">📍</div>
             <div>
               <div class="contact-item-title">Dirección</div>
-              <div class="contact-item-val" contenteditable="false">Av. Ejército 240, Cercado, Arequipa</div>
+              <div class="contact-item-val" contenteditable="true" data-orig="Av. Ejército 240, Cercado, Arequipa">Av. Ejército 240, Cercado, CUSCO</div>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-icon">🕐</div>
             <div>
               <div class="contact-item-title">Horario de atención</div>
-              <div class="contact-item-val" contenteditable="false">Lun–Sáb 8:00am – 6:00pm</div>
+              <div class="contact-item-val" contenteditable="true" data-orig="Lun–Sáb 8:00am – 6:00pm">Lun–Sáb 8:00am – 6:00pm</div>
             </div>
           </div>
         </div>
       </div>
       <div class="contact-form">
-        <div class="form-title" contenteditable="false">Envíanos un mensaje</div>
+        <div class="form-title" contenteditable="true" data-orig="Envíanos un mensaje">Envíanos un mensaje</div>
         <div class="form-row">
           <div class="form-group">
             <label>Nombre</label>
-            <input type="text" placeholder="Tu nombre completo"/>
+            <input type="text" placeholder="Tu nombre completo">
           </div>
           <div class="form-group">
             <label>Teléfono</label>
-            <input type="tel" placeholder="+51 000 000 000"/>
+            <input type="tel" placeholder="+51 000 000 000">
           </div>
         </div>
         <div class="form-group">
           <label>Correo electrónico</label>
-          <input type="email" placeholder="tu@correo.com"/>
+          <input type="email" placeholder="tu@correo.com">
         </div>
         <div class="form-group">
           <label>Servicio que necesitas</label>
@@ -1004,7 +1079,7 @@ footer{
         </div>
         <div class="form-group">
           <label>Marca y modelo de tu moto</label>
-          <input type="text" placeholder="Ej: Honda CB 190R 2022"/>
+          <input type="text" placeholder="Ej: Honda CB 190R 2022">
         </div>
         <div class="form-group">
           <label>Mensaje</label>
@@ -1019,35 +1094,35 @@ footer{
 <!-- ===================== 10. UBICACIÓN ===================== -->
 <section id="ubicacion">
   <div class="container">
-    <div class="section-label" contenteditable="false">Encuéntranos</div>
-    <h2 class="section-title" contenteditable="false">NUESTRA<br/><span class="orange">UBICACIÓN</span></h2>
+    <div class="section-label" contenteditable="true" data-orig="Encuéntranos">Encuéntranos</div>
+    <h2 class="section-title" contenteditable="true" data-orig="NUESTRA&lt;br&gt;&lt;span class=&quot;orange&quot;&gt;UBICACIÓN&lt;/span&gt;">NUESTRA<br><span class="orange">UBICACIÓN</span></h2>
     <div class="divider"></div>
     <div class="location-grid">
       <div>
         <div class="address-block" style="margin-bottom:28px;">
           <h4>Dirección</h4>
-          <p contenteditable="false">Av. Ejército 240, Cercado<br/>Arequipa, Perú</p>
+          <p contenteditable="true" data-orig="Av. Ejército 240, Cercado&lt;br&gt;Arequipa, Perú">Av. Ejército 240, Cercado<br>CUSCO, Perú</p>
         </div>
-        <div class="hours-title" contenteditable="false">Horario de atención</div>
+        <div class="hours-title" contenteditable="true" data-orig="Horario de atención">Horario de atención</div>
         <ul class="hours-list">
-          <li class="today"><span class="day" contenteditable="false">Lunes</span><span class="time" contenteditable="false">8:00 – 18:00</span></li>
-          <li class="today"><span class="day" contenteditable="false">Martes</span><span class="time" contenteditable="false">8:00 – 18:00</span></li>
-          <li class="today"><span class="day" contenteditable="false">Miércoles</span><span class="time" contenteditable="false">8:00 – 18:00</span></li>
-          <li class="today"><span class="day" contenteditable="false">Jueves</span><span class="time" contenteditable="false">8:00 – 18:00</span></li>
-          <li class="today"><span class="day" contenteditable="false">Viernes</span><span class="time" contenteditable="false">8:00 – 18:00</span></li>
-          <li><span class="day" contenteditable="false">Sábado</span><span class="time" contenteditable="false">9:00 – 14:00</span></li>
-          <li><span class="day" contenteditable="false">Domingo</span><span class="time" style="color:var(--gray)" contenteditable="false">Cerrado</span></li>
+          <li class="today"><span class="day" contenteditable="true" data-orig="Lunes">Lunes</span><span class="time" contenteditable="true" data-orig="8:00 – 18:00">8:00 – 18:00</span></li>
+          <li class="today"><span class="day" contenteditable="true" data-orig="Martes">Martes</span><span class="time" contenteditable="true" data-orig="8:00 – 18:00">8:00 – 18:00</span></li>
+          <li class="today"><span class="day" contenteditable="true" data-orig="Miércoles">Miércoles</span><span class="time" contenteditable="true" data-orig="8:00 – 18:00">8:00 – 18:00</span></li>
+          <li class="today"><span class="day" contenteditable="true" data-orig="Jueves">Jueves</span><span class="time" contenteditable="true" data-orig="8:00 – 18:00">8:00 – 18:00</span></li>
+          <li class="today"><span class="day" contenteditable="true" data-orig="Viernes">Viernes</span><span class="time" contenteditable="true" data-orig="8:00 – 18:00">8:00 – 18:00</span></li>
+          <li><span class="day" contenteditable="true" data-orig="Sábado">Sábado</span><span class="time" contenteditable="true" data-orig="9:00 – 14:00">9:00 – 14:00</span></li>
+          <li><span class="day" contenteditable="true" data-orig="Domingo">Domingo</span><span class="time" style="color:var(--gray)" contenteditable="true" data-orig="Cerrado">Cerrado</span></li>
         </ul>
         <div style="margin-top:28px;padding:20px;background:rgba(255,101,0,0.1);border:1px solid rgba(255,101,0,0.25);border-radius:10px;">
-          <div style="font-size:13px;color:var(--orange);font-weight:700;margin-bottom:6px;" contenteditable="false">📞 Emergencias 24 horas</div>
-          <div style="font-size:15px;color:var(--white);font-weight:600;" contenteditable="false">+51 951 234 567</div>
-          <div style="font-size:12px;color:var(--gray);margin-top:4px;" contenteditable="false">Solo para emergencias fuera de horario</div>
+          <div style="font-size:13px;color:var(--orange);font-weight:700;margin-bottom:6px;" contenteditable="true" data-orig="📞 Emergencias 24 horas">📞 Emergencias 24 horas</div>
+          <div style="font-size:15px;color:var(--white);font-weight:600;" contenteditable="true" data-orig="+51 951 234 567">+51 951 234 567</div>
+          <div style="font-size:12px;color:var(--gray);margin-top:4px;" contenteditable="true" data-orig="Solo para emergencias fuera de horario">Solo para emergencias fuera de horario</div>
         </div>
       </div>
       <div>
         <div class="map-placeholder">
           📍
-          <p contenteditable="false">Av. Ejército 240, Cercado, Arequipa. Frente al grifo Primax, a 2 cuadras del parque Selva Alegre.</p>
+          <p contenteditable="true" data-orig="Av. Ejército 240, Cercado, Arequipa. Frente al grifo Primax, a 2 cuadras del parque Selva Alegre.">Av. Ejército 240, Cercado, Arequipa. Frente al grifo Primax, a 2 cuadras del parque Selva Alegre.</p>
           <a class="map-cta" href="https://maps.google.com/?q=Arequipa+Peru" target="_blank">Ver en Google Maps</a>
         </div>
       </div>
@@ -1060,8 +1135,8 @@ footer{
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <div class="footer-brand" contenteditable="false">URUMOTOS SOLUTION</div>
-        <p class="footer-desc" contenteditable="false">Tu taller de confianza en Arequipa. Mecánica especializada, atención honesta y pasión por las dos ruedas desde 2012.</p>
+        <div class="footer-brand" contenteditable="true" data-orig="URUMOTOS SOLUTION">URUMOTOS SOLUTION</div>
+        <p class="footer-desc" contenteditable="true" data-orig="Tu taller de confianza en Arequipa. Mecánica especializada, atención honesta y pasión por las dos ruedas desde 2012.">Tu taller de confianza en Arequipa. Mecánica especializada, atención honesta y pasión por las dos ruedas desde 2012.</p>
         <div class="footer-socials" style="margin-top:20px;">
           <a class="fsocial" href="#">📘</a>
           <a class="fsocial" href="#">📸</a>
@@ -1085,6 +1160,7 @@ footer{
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#equipo">Equipo</a></li>
           <li><a href="#galeria">Galería</a></li>
+          <li><a href="#video">Video</a></li>
           <li><a href="#precios">Precios</a></li>
           <li><a href="#blog">Blog</a></li>
         </ul>
@@ -1092,25 +1168,25 @@ footer{
       <div class="footer-col">
         <h5>Contacto</h5>
         <ul>
-          <li><a href="tel:+51951234567" contenteditable="false">+51 951 234 567</a></li>
-          <li><a href="mailto:info@urumotossolution.pe" contenteditable="false">info@urumotossolution.pe</a></li>
-          <li><a href="#ubicacion" contenteditable="false">Av. Ejército 240, Arequipa</a></li>
+          <li><a href="tel:+51951234567" contenteditable="true" data-orig="+51 951 234 567">+51 951 234 567</a></li>
+          <li><a href="mailto:info@urumotossolution.pe" contenteditable="true" data-orig="info@urumotossolution.pe">info@urumotossolution.pe</a></li>
+          <li><a href="#ubicacion" contenteditable="true" data-orig="Av. Ejército 240, Arequipa">Av. Ejército 240, Arequipa</a></li>
           <li><a href="#contacto">Agenda una cita</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy" contenteditable="false">© 2025 Urumotos Solution. Todos los derechos reservados.</div>
-      <div style="font-size:12px;color:var(--gray);" contenteditable="false">Arequipa, Perú 🇵🇪</div>
+      <div class="footer-copy" contenteditable="true" data-orig="© 2025 Urumotos Solution. Todos los derechos reservados.">© 2025 Urumotos Solution. Todos los derechos reservados.</div>
+      <div style="font-size:12px;color:var(--gray);" contenteditable="true" data-orig="Arequipa, Perú 🇵🇪">Arequipa, Perú 🇵🇪</div>
     </div>
   </div>
 </footer>
 
 <!-- BOTONES DE EDICIÓN -->
 <div id="edit-bar">
-  <div id="edit-hint" class="visible">Doble clic para editar texto</div>
+  <div id="edit-hint" class="visible">Haz clic en cualquier texto para editarlo</div>
   <div id="save-btn" class="visible" onclick="saveAll()">💾 Guardar cambios</div>
-  <button id="edit-btn" onclick="toggleEdit()">✏️ Modo edición</button>
+  <button id="edit-btn" onclick="toggleEdit()" class="active">✅ Terminar edición</button>
 </div>
 
 <script>
@@ -1203,5 +1279,6 @@ window.addEventListener('scroll', function() {
   }
 });
 </script>
-</body>
-</html>
+
+
+</body></html>
